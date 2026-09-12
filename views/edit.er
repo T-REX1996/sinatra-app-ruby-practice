@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>メモ編集</title>
+</head>
+<body>
+  <h1>メモ編集</h1>
+  <form action="/memos/<%= @memo["id"] %>" method="post">
+    <input type="hidden" name="_method" value="patch">
+    <div>
+      <label for="title">タイトル</label>
+      <input type="text" id="title" name="title" value="<%= @memo["title"] %>" required autocomplete="off">
+    </div>
+    <div>
+      <label for="body">本文</label>
+      <textarea id="body" name="body" rows="5"><%= @memo["body"] %></textarea>
+    </div>
+    <button type="submit">更新する</button>
+  </form>
+  <a href="/memos/<%= @memo["id"] %>">詳細に戻る</a>
+</body>
+</html>

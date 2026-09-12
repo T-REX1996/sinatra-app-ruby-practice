@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>新規メモ作成</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>新規メモ作成</h1>
+  <form action="/memos" method="post">
+    <div>
+      <label for="title">タイトル</label>
+      <input type="text" id="title" name="title" required autocomplete="off">
+    </div>
+    <div>
+      <label for="body">本文</label>
+      <textarea id="body" name="body" rows="5"></textarea>
+    </div>
+    <button type="submit">作成する</button>
+  </form>
+  <a href="/memos">一覧に戻る</a>
+</body>
+</html>
