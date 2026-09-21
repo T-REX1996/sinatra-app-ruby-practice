@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>メモ帳</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>メモ一覧</h1>
+  <a href="/memos/new">新規作成</a>
+  <ul>
+    <% @memos.each do |memo| %>
+      <li><a href="/memos/<%= memo["id"] %>"><%= memo["title"] %></a></li>
+    <% end %>
+  </ul>
+</body>
+</html>
