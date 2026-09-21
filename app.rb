@@ -21,7 +21,7 @@ get '/memos' do
 end
 
 def save_memos(memos)
-  File.write(DATA_FILE, JSON.pretty_generate(memos))
+  File.write(DATA_FILE, JSON.generate(memos))
 end
 
 def next_id(memos)
