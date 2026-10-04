@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>メモ詳細</title>
-  <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+<% @title = 'メモ詳細' %>
   <h1><%= @memo["title"] %></h1>
   <p><%= @memo["body"] %></p>
 
@@ -17,5 +10,3 @@
   </form>
 
   <a href="/memos">一覧に戻る</a>
-</body>
-</html>
