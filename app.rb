@@ -47,8 +47,7 @@ post '/memos' do
   redirect '/memos'
 end
 
-def find_memo(id)
-  memos = load_memos
+def find_memo(id, memos = load_memos)
   memos.find { |memo| memo['id'] == id.to_i }
 end
 
@@ -64,7 +63,7 @@ end
 
 patch '/memos/:id' do
   memos = load_memos
-  memo = memos.find { |m| m['id'] == params[:id].to_i }
+  memo = find_memo(params[:id], memos)
   memo['title'] = params[:title]
   memo['body'] = params[:body]
   save_memos(memos)
